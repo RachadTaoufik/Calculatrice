@@ -27,8 +27,13 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     Button boutonDot;
 
     Button boutonOnOff;
+    Button boutonClear;
     TextView Screen;
     boolean started;
+
+    float op1;
+    float op2;
+    String operation;
 
 
     @SuppressLint("MissingInflatedId")
@@ -56,6 +61,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         boutonDot=(Button)findViewById(R.id.BttDot);
         boutonOnOff=(Button)findViewById(R.id.onoffBtt);
         Screen=(TextView) findViewById(R.id.screen);
+        boutonClear=(Button) findViewById(R.id.BttClear);
 
         bouton0.setOnClickListener(this);
         bouton1.setOnClickListener(this);
@@ -73,6 +79,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         boutonDot.setOnClickListener(this);
         boutonEquals.setOnClickListener(this);
         boutonOnOff.setOnClickListener(this);
+        boutonClear.setOnClickListener(this);
 
         bouton0.setEnabled(false);
         bouton1.setEnabled(false);
@@ -89,6 +96,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         boutonMult.setEnabled(false);
         boutonDot.setEnabled(false);
         boutonEquals.setEnabled(false);
+        boutonClear.setEnabled(false);
 
     }
 
@@ -111,6 +119,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             boutonMult.setEnabled(true);
             boutonDot.setEnabled(true);
                 boutonEquals.setEnabled(true);
+                boutonClear.setEnabled(true);
             started=true;
             }
             else{
@@ -128,6 +137,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 boutonMinus.setEnabled(false);
                 boutonMult.setEnabled(false);
                 boutonDot.setEnabled(false);
+                boutonClear.setEnabled(false);
                 started=false;
             }
         }
@@ -161,6 +171,37 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         }
         if(view.getId()==R.id.Btt9){
             Screen.setText(Screen.getText()+"9");
+        }
+        if(view.getId()==R.id.BttClear){
+            Screen.setText("");
+        }
+
+        if(view.getId()==R.id.BttPlus){
+            op1=Float.parseFloat(Screen.getText().toString());
+            operation="+";
+            Screen.setText("");
+        }
+        if(view.getId()==R.id.BttMinus){
+            op1=Float.parseFloat(Screen.getText().toString());
+            operation="-";
+            Screen.setText("");
+        }
+        if(view.getId()==R.id.BttMult){
+            op1=Float.parseFloat(Screen.getText().toString());
+            operation="*";
+            Screen.setText("");
+        }
+        if(view.getId()==R.id.BttEquals){
+            op2=Float.parseFloat(Screen.getText().toString());
+            if (operation.equals("+"))
+                Screen.setText(String.valueOf(op1+op2));
+            else if (operation.equals("-"))
+                Screen.setText(String.valueOf(op1-op2));
+            else if (operation.equals("*"))
+                Screen.setText(String.valueOf(op1*op2));
+
+
+
         }
 
     }
