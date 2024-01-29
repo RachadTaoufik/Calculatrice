@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    tools:context=".MainActivity"
+    android:layout_height="match_parent"
+    android:layout_width="match_parent"
+    android:orientation="vertical"
+    android:gravity="center"
+    android:layout_gravity="center">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_weight="2"
+        android:orientation="vertical">
+        <Button
+            android:id="@+id/onoffBtt"
+            android:layout_width="wrap_content"
+            android:layout_height="50dp"
+            android:text="ON/OFF" />
+
+        <TextView
+            android:id="@+id/screen"
+            android:layout_width="match_parent"
+            android:layout_height="100dp"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:background="@color/black"
+            android:textSize="40sp"
+            android:hint="0"
+            android:backgroundTint="@color/design_default_color_secondary"
+            android:foregroundTint="@color/black" />
+
+    </LinearLayout>
+    <TableLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_weight="1"
+        android:gravity="center"
+        android:layout_gravity="center">
+        <TableRow android:gravity="center">
+            <Button android:text="7" android:id="@+id/Btt7"/>
+            <Button android:text="8" android:id="@+id/Btt8"/>
+            <Button android:text="9" android:id="@+id/Btt9"/>
+            <Button android:text="+" android:id="@+id/BttPlus"/>
+        </TableRow>
+        <TableRow android:gravity="center">
+            <Button android:text="4" android:id="@+id/Btt4"/>
+            <Button android:text="5" android:id="@+id/Btt5"/>
+            <Button android:text="6" android:id="@+id/Btt6"/>
+            <Button android:text="-" android:id="@+id/BttMinus"/>
+        </TableRow>
+        <TableRow android:gravity="center">
+            <Button android:text="1" android:id="@+id/Btt1"/>
+            <Button android:text="2" android:id="@+id/Btt2"/>
+            <Button android:text="3" android:id="@+id/Btt3"/>
+            <Button android:text="*" android:id="@+id/BttMult"/>
+        </TableRow>
+        <TableRow android:gravity="center">
+            <Button android:text="." android:id="@+id/BttDot"/>
+            <Button android:text="0" android:id="@+id/Btt0"/>
+            <Button android:text="=" android:id="@+id/BttEquals"/>
+            />
+        </TableRow>
+
+    </TableLayout>
+
+</LinearLayout>
